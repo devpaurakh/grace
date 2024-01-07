@@ -46,6 +46,70 @@ class _HomepageState extends State<Homepage> {
             Text(
               "Discover and Get New Collection",
               style: AppWidgets.lightTextStyle(),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Material(
+                  color: Colors.black54,
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      "images/bag.png",
+                      height: 60,
+                      width: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.black54,
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      "images/hoddie.png",
+                      height: 60,
+                      width: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.black54,
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      "images/pant.png",
+                      height: 60,
+                      width: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.black54,
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      "images/tshirt.png",
+                      height: 60,
+                      width: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
