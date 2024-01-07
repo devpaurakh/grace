@@ -36,8 +36,17 @@ class _HomepageState extends State<Homepage> {
                 ),
               ],
             ),
-            const SizedBox(height: 30,),
-             Text("New Collection,", style: AppWidgets.boldTextFieldStytle()),
+            const SizedBox(
+              height: 30,
+            ),
+            Text(
+              "GRACE",
+              style: AppWidgets.headLineStyle(),
+            ),
+            Text(
+              "Discover and Get New Collection",
+              style: AppWidgets.lightTextStyle(),
+            )
           ],
         ),
       ),
