@@ -27,6 +27,14 @@ class AppWidgets {
         fontWeight: FontWeight.w500,
         fontFamily: 'Poppins');
   }
+
+  static TextStyle semiBoldTextStyle() {
+    return const TextStyle(
+        color: Colors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Poppins');
+  }
   
 
 }

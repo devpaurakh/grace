@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:grace/widgets/support_widgets.dart';
 
@@ -14,7 +16,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: const EdgeInsets.only(top: 60, left: 10.0, right: 20.0),
+        margin: const EdgeInsets.only(top: 60, left: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,6 +28,7 @@ class _HomepageState extends State<Homepage> {
                   style: AppWidgets.boldTextFieldStytle(),
                 ),
                 Container(
+                  margin: const EdgeInsets.only(right: 20),
                   padding: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
                       color: Colors.black,
@@ -51,7 +54,156 @@ class _HomepageState extends State<Homepage> {
             const SizedBox(
               height: 15,
             ),
-            showItem()
+            Container(
+                margin: const EdgeInsets.only(right: 20), child: showItem()),
+            const SizedBox(
+              height: 30,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(4),
+                    child: Material(
+                      elevation: 5,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.all(14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "images/bag_one.png",
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              "Grace's Red & Blue Bag",
+                              style: AppWidgets.semiBoldTextStyle(),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "New Collection",
+                              style: AppWidgets.lightTextStyle(),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "रु 499",
+                              style: AppWidgets.boldTextFieldStytle(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(4),
+                    child: Material(
+                      elevation: 5,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.all(14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "images/bag_two.png",
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              "Grace's Yellow Bag",
+                              style: AppWidgets.semiBoldTextStyle(),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Spical Collection",
+                              style: AppWidgets.lightTextStyle(),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "रु 1000",
+                              style: AppWidgets.boldTextFieldStytle(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              margin: const EdgeInsets.only(right: 20),
+              child: Material(
+                elevation: 5,
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "images/bag_three.png",
+                        height: 130,
+                        width: 130,
+                        fit: BoxFit.cover,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "Grace's New Falcon Bag",
+                              style: AppWidgets.semiBoldTextStyle(),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "Special Collection and Hand Made",
+                              style: AppWidgets.lightTextStyle(),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "रु 1400",
+                              style: AppWidgets.semiBoldTextStyle(),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
