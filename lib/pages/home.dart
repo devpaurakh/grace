@@ -9,6 +9,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  bool bag = false, hoddie = false, pant = false, tshirt = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,70 +51,122 @@ class _HomepageState extends State<Homepage> {
             const SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Material(
-                  color: Colors.black54,
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: Image.asset(
-                      "images/bag.png",
-                      height: 60,
-                      width: 60,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Material(
-                  color: Colors.black54,
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: Image.asset(
-                      "images/hoddie.png",
-                      height: 60,
-                      width: 60,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Material(
-                  color: Colors.black54,
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: Image.asset(
-                      "images/pant.png",
-                      height: 60,
-                      width: 60,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Material(
-                  color: Colors.black54,
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: Image.asset(
-                      "images/tshirt.png",
-                      height: 60,
-                      width: 60,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
-              ],
-            )
+            showItem()
           ],
         ),
       ),
+    );
+  }
+
+  Widget showItem() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        GestureDetector(
+          onTap: () {
+            bag = true;
+            hoddie = false;
+            pant = false;
+            tshirt = false;
+            setState(() {});
+          },
+          child: Material(
+            color: Colors.black54,
+            elevation: 5,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: bag ? Colors.black54 : Colors.white,
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                "images/bag.png",
+                height: 60,
+                width: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            bag = false;
+            hoddie = true;
+            pant = false;
+            tshirt = false;
+            setState(() {});
+          },
+          child: Material(
+            color: Colors.black54,
+            elevation: 5,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: hoddie ? Colors.black54 : Colors.white,
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                "images/hoddie.png",
+                height: 60,
+                width: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            bag = false;
+            hoddie = false;
+            pant = true;
+            tshirt = false;
+            setState(() {});
+          },
+          child: Material(
+            color: Colors.black54,
+            elevation: 5,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: pant ? Colors.black54 : Colors.white,
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                "images/pant.png",
+                height: 60,
+                width: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            bag = false;
+            hoddie = false;
+            pant = false;
+            tshirt = true;
+            setState(() {});
+          },
+          child: Material(
+            color: Colors.black54,
+            elevation: 5,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: tshirt ? Colors.black54 : Colors.white,
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                "images/tshirt.png",
+                height: 60,
+                width: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
